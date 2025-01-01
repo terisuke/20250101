@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <style>
+    .kakizome-container {
+      background: #f5f5f5;
+      padding: 2rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      font-family: "Kaisei Decol", "DFKai-SB", "HiraMinProN-W6", "HGKai", "MS PMincho", serif;
+    }
+
+    .main-text {
+      font-size: 5rem;
+      writing-mode: vertical-rl;
+      margin: 2rem;
+      position: relative;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+    }
+
+    .character {
+      opacity: 0;
+      animation: brushStroke 1s ease-out forwards;
+      display: inline-block;
+    }
+
+    .char1 {
+      animation-delay: 0s;
+    }
+
+    .char2 {
+      animation-delay: 0.5s;
+    }
+
+    .char3 {
+      animation-delay: 1s;
+    }
+
+    .char4 {
+      animation-delay: 1.5s;
+    }
+
+    .char5 {
+      animation-delay: 2s;
+    }
+
+    @keyframes brushStroke {
+      from {
+        opacity: 0;
+        transform: translateY(-20px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .stamp {
+      color: #d42424;
+      font-size: 1.2rem;
+      transform: rotate(15deg);
+      position: absolute;
+      bottom: 20px;
+      right: 20px;
+      border: 2px solid #d42424;
+      padding: 0.5rem;
+      border-radius: 50%;
+      animation: stampAppear 1s ease-in-out 3s forwards;
+      opacity: 0;
+      white-space: nowrap;
+    }
+
+    @keyframes stampAppear {
+      from {
+        opacity: 0;
+        transform: rotate(15deg) scale(1.5);
+      }
+
+      to {
+        opacity: 1;
+        transform: rotate(15deg) scale(1);
+      }
+    }
+
+    .ink-drops {
+      position: absolute;
+      font-size: 0.5rem;
+      color: rgba(0, 0, 0, 0.2);
+    }
+
+    .drop1 {
+      top: 10%;
+      left: 10%;
+      animation: float 3s infinite ease-in-out;
+    }
+
+    .drop2 {
+      top: 20%;
+      right: 15%;
+      animation: float 4s infinite ease-in-out;
+    }
+
+    .drop3 {
+      bottom: 30%;
+      left: 20%;
+      animation: float 3.5s infinite ease-in-out;
+    }
+
+    @keyframes float {
+
+      0%,
+      100% {
+        transform: translateY(0);
+      }
+
+      50% {
+        transform: translateY(-10px);
+      }
+    }
+
+    .year {
+      font-size: 1.2rem;
+      margin-top: 1rem;
+      color: #666;
+      opacity: 0;
+      animation: fadeIn 1s ease-out 2.5s forwards;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+      }
+
+      to {
+        opacity: 1;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="kakizome-container">
+    <div class="main-text">
+      <span class="character char1">あ</span>
+      <span class="character char2">け</span>
+      <span class="character char3">お</span>
+      <span class="character char4">め</span>
+      <span class="character char5">。</span>
+      <span class="ink-drops drop1">💧</span>
+      <span class="ink-drops drop2">💧</span>
+      <span class="ink-drops drop3">💧</span>
+      <div class="stamp">テリスケ</div>
+    </div>
+    <div class="year">2025年 元旦</div>
+  </div>
+</body>
+
+</html>
